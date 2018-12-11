@@ -1,3 +1,3 @@
-# JavaScript Programs
+# Rock Paper Scissor
 
-Different types of simple JavaScript Programs.
+A Simple Rock Paper Scissor Game using _HTML_, _CSS_ and _JavaScript_.
