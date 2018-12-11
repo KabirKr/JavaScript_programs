@@ -3,13 +3,13 @@
 // Selecting DOM
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#comp-score");
-const finalResult = document.querySelector(".final_result");
-const result = document.querySelector(".__result");
-const resetButton = document.getElementById("reset-btn");
+const rock = document.querySelector("#r");
+const paper = document.querySelector("#p");
+const scissor = document.querySelector("#s");
 const result_div = document.querySelector(".result");
-const rock = document.getElementById("r");
-const paper = document.getElementById("p");
-const scissor = document.getElementById("s");
+const result = document.querySelector(".__result");
+const finalResult = document.querySelector(".final_result");
+const resetButton = document.querySelector("#reset-btn");
 
 // Initial Scores of player and comp
 let player = 0;
@@ -40,10 +40,10 @@ let convertToWord = letter => {
 let win = (playerInput, compInput) => {
   player++;
   const choice_div = document.getElementById(playerInput);
-  playerScore.innerHTML = player;
-  computerScore.innerHTML = computer;
-  result.innerHTML = convertToWord(compInput);
-  finalResult.innerHTML = "You Win";
+  playerScore.textContent = player;
+  computerScore.textContent = computer;
+  result.textContent = convertToWord(compInput);
+  finalResult.textContent = "You Win";
   choice_div.classList.add("choice_div_green");
   setTimeout(() => choice_div.classList.remove("choice_div_green"), 400);
   result_div.style.visibility = "visible";
@@ -54,10 +54,10 @@ let win = (playerInput, compInput) => {
 let loose = (playerInput, compInput) => {
   computer++;
   const choice_div = document.getElementById(playerInput);
-  computerScore.innerHTML = computer;
-  computerScore.innerHTML = computer;
-  result.innerHTML = convertToWord(compInput);
-  finalResult.innerHTML = "You lost!";
+  computerScore.textContent = computer;
+  computerScore.textContent = computer;
+  result.textContent = convertToWord(compInput);
+  finalResult.textContent = "You lost!";
   choice_div.classList.add("choice_div_red");
   setTimeout(() => choice_div.classList.remove("choice_div_red"), 400);
   result_div.style.visibility = "visible";
@@ -67,10 +67,10 @@ let loose = (playerInput, compInput) => {
 // Action When a player draw
 let draw = (playerInput, compInput) => {
   const choice_div = document.getElementById(playerInput);
-  playerScore.innerHTML = player;
-  computerScore.innerHTML = computer;
-  result.innerHTML = convertToWord(compInput);
-  finalResult.innerHTML = "It's a Draw";
+  playerScore.textContent = player;
+  computerScore.textContent = computer;
+  result.textContent = convertToWord(compInput);
+  finalResult.textContent = "It's a Draw";
   choice_div.classList.add("choice_div_yellow");
   setTimeout(() => choice_div.classList.remove("choice_div_yellow"), 400);
   result_div.style.visibility = "visible";
@@ -104,8 +104,8 @@ let gamePlay = playerChoice => {
 resetButton.addEventListener("click", () => {
   player = 0;
   computer = 0;
-  playerScore.innerHTML = player;
-  computerScore.innerHTML = computer;
+  playerScore.textContent = player;
+  computerScore.textContent = computer;
   result_div.style.visibility = "hidden";
 });
 
